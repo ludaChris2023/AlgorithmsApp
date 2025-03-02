@@ -12,6 +12,7 @@ struct AlgorithmsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(NavigationState()) // Provide the environment object here
         }
     }
 }
