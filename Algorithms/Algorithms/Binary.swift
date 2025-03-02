@@ -9,7 +9,7 @@ struct BinarySearchView: View{
     var body: some View{
         AlgorithmDescriptionView(
             title:"Binary Search",
-            description: AlgorithmsDescription.binarySearch.rawValue, gradientColors: [Color.red, Color.yellow]
+            description: AlgorithmsDescription.binarySearch.rawValue, animation: "binary", gradientColors: [Color.red, Color.yellow]
             
         )
     }

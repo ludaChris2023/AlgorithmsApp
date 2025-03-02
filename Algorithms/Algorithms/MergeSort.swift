@@ -9,7 +9,7 @@ struct MergeSortView: View {
     var body: some View {
         AlgorithmDescriptionView(
             title: "Merge Sort Algorithm",
-            description: AlgorithmsDescription.mergeSort.rawValue,
+            description: AlgorithmsDescription.mergeSort.rawValue, animation: "Merge",
             gradientColors: [Color.orange, Color.purple] // Unique gradient for Merge Sort
         )
     }

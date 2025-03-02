@@ -14,6 +14,7 @@ class AnimationState: ObservableObject{
 struct AlgorithmDescriptionView: View {
     var title: String
     var description: String
+    var animation: String
     var gradientColors: [Color]
     
     @EnvironmentObject var animationState: AnimationState
@@ -27,7 +28,7 @@ struct AlgorithmDescriptionView: View {
                 .padding(.top, 20)
             
             Spacer()
-            
+            ScrollViewReader{ proxy in
             ScrollView {
                 Text(description)
                     .font(.body)
@@ -37,12 +38,17 @@ struct AlgorithmDescriptionView: View {
                     .background(Color.white.opacity(0.85))
                     .cornerRadius(15)
                     .shadow(radius: 10)
+                    .id("description")
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
+            .onAppear{
+                proxy.scrollTo("description", anchor: .top)
+            }
+            }
             
             CustomSpacer(height: 5)
-            AnimationButton(title: "View Animation")
+            AnimationButton(title: "View Animation", animation: animation)
             CustomSpacer(height: 60)
         }
         .padding()
@@ -55,7 +61,7 @@ struct AlgorithmDescriptionView: View {
         .navigationDestination(isPresented: $animationState.isActive) {
             switch animationState.whichAnimation {
             case "Quick":
-                QuickSortView()
+                QuickSortAnimationView()
             default:
                 BlankView()
             }
@@ -66,11 +72,12 @@ struct AlgorithmDescriptionView: View {
 
 struct AnimationButton: View {
     var title: String
+    var animation: String
     @EnvironmentObject var animationState: AnimationState
 
     var body: some View {
         Button(action: {
-            animationState.whichAnimation = title
+            animationState.whichAnimation = animation
             animationState.isActive = true
         }) {
             Text(title)
@@ -129,7 +136,7 @@ enum AlgorithmsDescription: String {
     NavigationStack {
         AlgorithmDescriptionView(
             title: "Quick Sort Algorithm",
-            description: AlgorithmsDescription.quickSort.rawValue,
+            description: AlgorithmsDescription.quickSort.rawValue, animation: "Quick",
             gradientColors: [Color.blue, Color.purple]
         ).environmentObject(AnimationState())
     }

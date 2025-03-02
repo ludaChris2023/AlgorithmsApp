@@ -10,7 +10,7 @@ struct QuickSortView: View {
     var body: some View {
         AlgorithmDescriptionView(
             title: "Quick Sort Algorithm",
-            description: AlgorithmsDescription.quickSort.rawValue,
+            description: AlgorithmsDescription.quickSort.rawValue, animation: "Quick",
             gradientColors: [Color.purple, Color.blue ] // Unique gradient for Quick Sort
         )
     }
