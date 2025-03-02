@@ -1,0 +1,9 @@
+# macOS system files
+.DS_Store
+
+# Xcode and Swift-related files
+*.xcuserstate
+*.xcworkspace
+DerivedData/
+Pods/
+
