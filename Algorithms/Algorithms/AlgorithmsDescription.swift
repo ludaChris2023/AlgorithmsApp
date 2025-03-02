@@ -126,10 +126,12 @@ enum AlgorithmsDescription: String {
 
 
 #Preview {
-    AlgorithmDescriptionView(
-        title: "Quick Sort Algorithm",
-        description: AlgorithmsDescription.quickSort.rawValue,
-        gradientColors: [Color.blue, Color.purple] // Pass a custom gradient here
-    ).environmentObject(AnimationState())
+    NavigationStack {
+        AlgorithmDescriptionView(
+            title: "Quick Sort Algorithm",
+            description: AlgorithmsDescription.quickSort.rawValue,
+            gradientColors: [Color.blue, Color.purple]
+        ).environmentObject(AnimationState())
+    }
 }
 

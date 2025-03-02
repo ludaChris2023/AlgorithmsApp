@@ -13,6 +13,7 @@ struct AlgorithmsApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(NavigationState()) // Provide the environment object here
+                
         }
     }
 }

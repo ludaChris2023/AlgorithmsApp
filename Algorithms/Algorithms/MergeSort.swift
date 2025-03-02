@@ -16,5 +16,7 @@ struct MergeSortView: View {
 }
 
 #Preview {
-    MergeSortView().environmentObject(NavigationState()).environmentObject(AnimationState())
+    NavigationStack{
+        MergeSortView().environmentObject(AnimationState())
+    }
 }

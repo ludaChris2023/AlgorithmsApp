@@ -17,5 +17,7 @@ struct QuickSortView: View {
 }
 
 #Preview {
-    QuickSortView().environmentObject(NavigationState()).environmentObject(AnimationState())
+    NavigationStack{
+        QuickSortView().environmentObject(AnimationState())
+    }
 }

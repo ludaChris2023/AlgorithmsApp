@@ -17,6 +17,8 @@ struct BinarySearchView: View{
 
 
 #Preview {
-    BinarySearchView()
+    NavigationStack{
+        BinarySearchView().environmentObject(AnimationState())
+    }
 }
 

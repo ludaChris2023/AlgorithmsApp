@@ -26,5 +26,7 @@ struct DijkstraAlgorithmView: View {
 }
 
 #Preview {
-    DijkstraAlgorithmView()
+    NavigationStack{
+        DijkstraAlgorithmView().environmentObject(AnimationState())
+    }
 }
