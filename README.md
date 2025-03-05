@@ -1,5 +1,5 @@
 # AlgorithmsApp
-Educational Algorithms App
+Educational Algorithms App for students to self-study Computer Science Theory. ***In early development****
 
 
 
